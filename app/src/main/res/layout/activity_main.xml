@@ -1,8 +1,143 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Touchpad">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:windowSoftInputMode="adjustResize">
 
-</RelativeLayout>
+    <!-- Keyboard/Mouse buttons -->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/buttons"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/keyboard"
+            android:contentDescription="@string/keyboard_desc"
+            android:layout_width="92dp"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:src="@mipmap/keyboard"
+            android:background="@null" />
+
+        <!-- Mouse buttons -->
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/mousebuttons"
+            android:contentDescription="@string/mousebuttons_desc"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/line1"
+                style="?android:attr/listSeparatorTextViewStyle"
+                android:padding="5dip"
+                android:gravity="center_horizontal"
+                android:layout_width="1dp"
+                android:layout_height="match_parent" />
+
+            <ToggleButton
+                android:id="@+id/button0"
+                android:contentDescription="@string/button0_desc"
+                android:textOn="" android:textOff=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button0"
+                android:checked="false" />
+            <ToggleButton
+                android:id="@+id/button1"
+                android:contentDescription="@string/button1_desc"
+                android:textOn="" android:textOff=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button1"
+                android:checked="false" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <!-- Touchpad area -->
+    <ImageView
+        android:id="@+id/touchpad"
+        android:contentDescription="@string/touchpad_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:src="@mipmap/background"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <!--  Toolbars -->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:contentDescription=""
+        android:layout_width="290dp" android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_weight="0.05"
+        android:weightSum="1"
+        android:baselineAligned="false">
+
+
+        <!-- Media buttons -->
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/media"
+            android:contentDescription="@string/media_desc"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1.54">
+
+            <ImageButton
+                android:id="@+id/stop"
+                android:contentDescription="@string/mediapause_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:src="@mipmap/pause"
+                android:background="@null" />
+
+            <TextView
+                android:id="@+id/line3"
+                style="?android:attr/listSeparatorTextViewStyle"
+                android:padding="5dip"
+                android:gravity="center_horizontal"
+                android:layout_width="1dp"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/play"
+                android:contentDescription="@string/mediaplay_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:src="@mipmap/play"
+                android:background="@null"
+                android:layout_weight="0.61" />
+
+            <TextView
+                android:id="@+id/line4"
+                style="?android:attr/listSeparatorTextViewStyle"
+                android:padding="5dip"
+                android:gravity="center_horizontal"
+                android:layout_width="1dp"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/volumemute"
+                android:contentDescription="@string/volumemute_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:src="@mipmap/mute"
+                android:background="@null" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
